@@ -1,0 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ============================== Webkits ============================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #eee;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d6d6d6;
+  border-radius: 20px;
+}
+
+/* ================================ Main ===============================  */
+
+.container {
+  height: 100vh;
+}
+
+.search {
+  height: 22vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 0;
+  background-color: #91cbf1;
+}
+
+.search__form {
+  text-align: center;
+}
+
+.search__input {
+  border-radius: 4px;
+  padding: 0.7rem 1rem;
+  margin-right: 2px;
+  border: 1px solid transparent;
+}
+
+.search__input:focus {
+  border: 1px solid rgb(0, 110, 255);
+  box-shadow: rgba(0, 89, 255, 0.4) 0px 1px 2px 0px;
+}
+
+.search__btn {
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 0.7rem 1.5rem;
+  border: 1px solid transparent;
+  font-weight: 500;
+  color: #fff;
+  margin-left: 2px;
+  background-color: rgb(0, 110, 255);
+  transition: all 0.2s ease-out;
+}
+
+.search__btn:hover {
+  background-color: rgb(0, 94, 218);
+}
+
+.search__info {
+  color: #444;
+  font-size: 1.3rem;
+  padding-top: 0.5rem;
+}
+
+.posts {
+  height: calc(100vh - calc(22vh + 2rem));
+  padding: 4rem 3rem;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.post {
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 6px;
+}
+
+.post__id {
+  padding: 0.5rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.post__userid {
+  padding: 0.5rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.post__title {
+  padding: 0.5rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.post__body {
+  margin-top: 0.5rem;
+  padding: 0 0.5rem 0.5rem;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+/* =============================== Common ==============================  */
+
+.hide {
+  display: none;
+}
+
+/* ================================ Media ==============================  */
+
+@media (max-width: 800px) {
+  .posts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .posts {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* ================================ loader ==============================  */
+.loader {
+  width: 48px;
+  height: 48px;
+  display: block;
+  margin: 5rem auto 0;
+  position: relative;
+  border-radius: 50%;
+  border: 3px solid #000;
+  animation: animloader 2s linear infinite;
+}
+
+.loader::after {
+  content: "";
+  width: 5px;
+  height: 24px;
+  background: #000;
+  transform: rotate(-45deg);
+  position: absolute;
+  bottom: -20px;
+  left: 46px;
+}
+
+@keyframes animloader {
+  0% {
+    transform: translate(-10px, -10px);
+  }
+
+  25% {
+    transform: translate(-10px, 10px);
+  }
+
+  50% {
+    transform: translate(10px, 10px);
+  }
+
+  75% {
+    transform: translate(10px, -10px);
+  }
+
+  100% {
+    transform: translate(-10px, -10px);
+  }
+}
